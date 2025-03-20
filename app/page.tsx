@@ -10,8 +10,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
+
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -483,92 +486,46 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-  <div className="container px-4 md:px-6">
-    <div className="flex flex-col items-center justify-center space-y-4 text-center">
-      <div className="space-y-2">
-        <h2 className="text-3xl font-serif font-bold tracking-tighter sm:text-5xl">
-          Get in Touch
-        </h2>
-        <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-          Contact us to get more info:
-        </p>
-      </div>
-      <div className="mx-auto w-full max-w-sm space-y-4">
-        <div className="flex items-center justify-center gap-2">
-          <Mail className="h-5 w-5" />
-          <a href="mailto:aashnashah4@gmail.com" className="text-primary hover:underline">
-            aashnashah4@gmail.com
-          </a>
-        </div>
-        <div className="flex items-center justify-center gap-2">
-          <Phone className="h-5 w-5" />
-          <a href="tel:+919820427799" className="text-primary hover:underline">
-            +91 98204 27799
-          </a>
-        </div>
-      </div>
-      <div className="w-full max-w-md space-y-2">
-        <form 
-          name="contact" 
-          method="POST" 
-          data-netlify="true" 
-          data-netlify-honeypot="bot-field"
-          className="grid gap-4"
+        <section
+          id="contact"
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted"
         >
-          {/* Hidden Fields */}
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" />
-            </label>
-          </p>
-
-          {/* Name Input */}
-          <div className="grid gap-2">
-            <label htmlFor="name" className="sr-only">Name</label>
-            <input
-              id="name"
-              name="name"  // ✅ Required for Netlify Forms
-              placeholder="Name"
-              required
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-            />
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-serif font-bold tracking-tighter sm:text-5xl">
+                  Get in Touch
+                </h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
+                  Contact us to get more info:
+                </p>
+              </div>
+              <div className="mx-auto w-full max-w-sm space-y-4">
+                <div className="flex items-center justify-center gap-2">
+                  <Mail className="h-5 w-5" />
+                  <a
+                    href="mailto:aashnashah4@gmail.com"
+                    className="text-primary hover:underline"
+                  >
+                    aashnashah4@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  <a
+                    href="tel:+919820427799"
+                    className="text-primary hover:underline"
+                  >
+                    +91 98204 27799
+                  </a>
+                </div>
+              </div>
+              <div className="w-full max-w-md space-y-2">
+                <ContactForm  />
+              </div>
+            </div>
           </div>
-
-          {/* Email Input */}
-          <div className="grid gap-2">
-            <label htmlFor="email" className="sr-only">Email</label>
-            <input
-              id="email"
-              name="email"  // ✅ Required for Netlify Forms
-              type="email"
-              placeholder="Email"
-              required
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-            />
-          </div>
-
-          {/* Message Input */}
-          <div className="grid gap-2">
-            <label htmlFor="message" className="sr-only">Message</label>
-            <textarea
-              id="message"
-              name="message"  // ✅ Required for Netlify Forms
-              placeholder="Message"
-              required
-              className="flex min-h-[100px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-            ></textarea>
-          </div>
-
-          {/* Submit Button */}
-          <Button type="submit" className="w-full">Send Message</Button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
+        </section>
       </main>
 
       <footer className="w-full border-t py-6 md:py-0">
